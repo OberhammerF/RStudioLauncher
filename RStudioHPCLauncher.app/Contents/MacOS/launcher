@@ -1,0 +1,29 @@
+#!/bin/bash
+# RStudio HPC Launcher — macOS app entry point
+# Launches the Flask server via Terminal.app to avoid macOS sandbox restrictions.
+
+# Resolve paths
+SELF="${BASH_SOURCE[0]}"
+SCRIPT_DIR="$(cd "$(dirname "$SELF")" && pwd)"
+APP_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
+DIR="$(cd "$APP_DIR/.." && pwd)"
+
+SCRIPT="$DIR/rstudio_launcher.py"
+VENV_PYTHON="$DIR/.venv/bin/python"
+VENV_PIP="$DIR/.venv/bin/pip"
+
+# Build the command that Terminal.app will run
+# It activates the venv, installs deps if needed, and runs the server
+CMD="cd '$DIR'"
+CMD="$CMD && if [ ! -x '$VENV_PYTHON' ]; then python3 -m venv '$DIR/.venv'; fi"
+CMD="$CMD && '$VENV_PYTHON' -c 'import flask, paramiko, webview' 2>/dev/null || '$VENV_PIP' install flask paramiko pywebview"
+CMD="$CMD && '$VENV_PYTHON' '$SCRIPT'"
+CMD="$CMD ; echo ''; echo 'Press any key to close...'; read -n1"
+
+# Open in Terminal.app (gets proper permissions)
+osascript -e "
+tell application \"Terminal\"
+    activate
+    do script \"$CMD\"
+end tell
+"
