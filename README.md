@@ -32,10 +32,13 @@ You need:
 
 ## Installation & Running
 
+1. Download or fork the repository to your laptop.
+2. Follow steps below
+
 ### 🍎 macOS Users
 
 **Option 1: Double-click the app (easiest)**
-1. In Finder, navigate to this folder
+1. In Finder, navigate to the folder containing this repo
 2. Double-click **`RStudioHPCLauncher.app`**
 3. A native window opens — done!
 
@@ -46,11 +49,16 @@ The app will:
 - Save your settings automatically
 
 **Option 2: Run from terminal**
+(/path/to/rstudioHpc = location of this repo)
 ```bash
 cd /path/to/rstudioHpc
-pip install -r requirements.txt
+python3 -m venv venv
+source venv/bin/activate
+pip3 install -r requirements.txt
 python rstudio_launcher.py
 ```
+
+If your mac says that it cant verify the app, go to settings>privacy &security > security and click on open anyway for the RStudioLauncher. If it still wont work, open it from the terminal using "cd /path/to/rstudioHpc", "source venv/bin/activate", "python rstudio_launcher.py"
 
 ### 🐧 Linux & Windows Users
 
@@ -63,7 +71,7 @@ python3 -m venv venv
 source venv/bin/activate    # On Windows: venv\Scripts\activate
 
 # Install dependencies
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 
 # Run the app
 python rstudio_launcher.py
