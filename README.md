@@ -32,6 +32,9 @@ You need:
 
 ## Installation & Running
 
+1. Download or fork the repository to your laptop.
+2. Follow steps below
+
 ### 🍎 macOS Users
 
 **Option 1: Double-click the app (easiest)**
