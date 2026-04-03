@@ -857,6 +857,7 @@ mkdir -p /hpc/pmc_YOUR_GROUP/YOUR_USERNAME/temp_dir</pre>
           <h3><span class="step-num">3</span> Open in Browser</h3>
           <p>Click the 🌐 <strong>Open</strong> button next to your active tunnel. Your default browser will open with RStudio Server ready to use.</p>
           <p>Log in with the username and password shown in the job info.</p>
+          <div class="tip">&#x1F4A1; <strong>Can't connect?</strong> See the <strong>"Can't connect to the server?"</strong> troubleshooting section below for manual SSH tunnel steps.</div>
         </div>
 
         <div class="step-group">
@@ -868,6 +869,21 @@ mkdir -p /hpc/pmc_YOUR_GROUP/YOUR_USERNAME/temp_dir</pre>
             <li>Cancel the job (⏹ <strong>Cancel All RStudio Jobs</strong> button, which closes all tunnels automatically)</li>
           </ol>
           <p>You can also manage multiple tunnels at once if you have several jobs running.</p>
+        </div>
+
+        <div class="step-group">
+          <h3>&#x26A0;&#xFE0F; Can't connect to the server?</h3>
+          <p>If you get an error when clicking the 🌐 <strong>Open</strong> button, the SSH tunnel may not have connected properly. Try manually opening the tunnel:</p>
+          <ol>
+            <li>Go to the HPC and navigate to your selected <strong>XDG_DATA_HOME</strong> location where your RStudio job file was created</li>
+            <li>Open the job file (it will be named something like <code>rstudio_job_*.sh</code>) and find the line that sets up the SSH tunnel, typically something like:
+              <pre>ssh -L 8787:${HOSTNAME}:${PORT} gw2hpcs06</pre>
+            </li>
+            <li>Copy that entire SSH command and paste it into a new terminal window on your laptop</li>
+            <li>When you run it, SSH will ask you to validate the fingerprint (the host's cryptographic signature). Answer <strong>yes</strong> to accept and verify the connection</li>
+            <li>Once the tunnel is established, try opening RStudio in your browser again</li>
+          </ol>
+          <div class="tip">&#x1F4A1; If you're having trouble locating the SSH command in your job file, look for the line containing both <code>-L 8787</code> and <code>gw2hpcs06</code>.</div>
         </div>
 
       </div>
