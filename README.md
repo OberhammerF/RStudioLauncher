@@ -58,6 +58,8 @@ pip3 install -r requirements.txt
 python rstudio_launcher.py
 ```
 
+If your mac says that it cant verify the app, go to settings>privacy &security > security and click on open anyway for the RStudioLauncher
+
 ### 🐧 Linux & Windows Users
 
 ```bash
