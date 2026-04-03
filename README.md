@@ -52,7 +52,9 @@ The app will:
 (/path/to/rstudioHpc = location of this repo)
 ```bash
 cd /path/to/rstudioHpc
-pip install -r requirements.txt
+python3 -m venv venv
+source venv/bin/activate
+pip3 install -r requirements.txt
 python rstudio_launcher.py
 ```
 
@@ -67,7 +69,7 @@ python3 -m venv venv
 source venv/bin/activate    # On Windows: venv\Scripts\activate
 
 # Install dependencies
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 
 # Run the app
 python rstudio_launcher.py
