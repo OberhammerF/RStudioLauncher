@@ -38,7 +38,7 @@ You need:
 ### 🍎 macOS Users
 
 **Option 1: Double-click the app (easiest)**
-1. In Finder, navigate to this folder
+1. In Finder, navigate to the folder containing this repo
 2. Double-click **`RStudioHPCLauncher.app`**
 3. A native window opens — done!
 
@@ -49,6 +49,7 @@ The app will:
 - Save your settings automatically
 
 **Option 2: Run from terminal**
+(/path/to/rstudioHpc = location of this repo)
 ```bash
 cd /path/to/rstudioHpc
 pip install -r requirements.txt
