@@ -58,7 +58,7 @@ pip3 install -r requirements.txt
 python rstudio_launcher.py
 ```
 
-If your mac says that it cant verify the app, go to settings>privacy &security > security and click on open anyway for the RStudioLauncher
+If your mac says that it cant verify the app, go to settings>privacy &security > security and click on open anyway for the RStudioLauncher. If it still wont work, open it from the terminal using "cd /path/to/rstudioHpc", "source venv/bin/activate", "python rstudio_launcher.py"
 
 ### 🐧 Linux & Windows Users
 
