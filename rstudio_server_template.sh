@@ -39,8 +39,8 @@ singularity_dir="/hpc/pmc_kuiper/singularity"
 XDG_DATA_HOME_PATH="CHANGE_ME"
 
 # Where R packages for this version are installed (shared across users in a group)
-# e.g.: /hpc/pmc_kuiper/Rstudio_Server_Libs/Rstudio_4.3.1_libs
-R_LIBS_USER_PATH="/hpc/pmc_kuiper/Rstudio_Server_Libs/Rstudio_${version}_libs"
+# e.g.: /hpc/local/Rocky8/pmc_kuiper/software/R_libs/Rstudio_Server_Libs/Rstudio_4.3.1_libs
+R_LIBS_USER_PATH="/hpc/local/Rocky8/pmc_kuiper/software/R_libs/Rstudio_Server_Libs/Rstudio_${version}_libs"
 
 # Path to the Python .sif image (used to find a free port)
 PYTHON_SIF="${singularity_dir}/python_3.11.3.sif"
