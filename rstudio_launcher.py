@@ -430,13 +430,13 @@ HTML_TEMPLATE = r"""
       <h3><span class="icon">&#x1F4CA;</span> R / RStudio Settings</h3>
       <div class="form-grid">
         <label>R version</label>
-        <select id="r_version">
-          <option value="4.3.1" selected>4.3.1</option>
-          <option value="4.3.2">4.3.2</option>
-          <option value="4.4.0">4.4.0</option>
-          <option value="4.4.1">4.4.1</option>
-        </select>
-        <span class="hint">Must match the version defined in your script's singularity_dir</span>
+        <input id="r_version" value="4.3.1" placeholder="e.g. 4.3.1, 4.4.2, 4.5.0 devel" list="r_version_examples">
+        <datalist id="r_version_examples">
+          <option value="4.4.2"></option>
+          <option value="4.5.0"></option>
+          <option value="devel"></option>
+        </datalist>
+        <span class="hint">Free text is allowed. Examples: 4.3.1, 4.4.2, 4.5.0, devel. It must still match the version defined in your script's singularity_dir.</span>
         <label>XDG_DATA_HOME</label>
         <input id="xdg_data_home" value="" placeholder="/hpc/pmc_kuiper/youruser/RStudioSessions">
       </div>
